@@ -61,4 +61,4 @@ python test_script.py
 
 `docker-compose.yml:` Docker Compose config
 
-.env: Environment variables for database connection
+`.env:` Environment variables for database connection
