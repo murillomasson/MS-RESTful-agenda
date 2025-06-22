@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:15
+    container_name: agenda_db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: agenda
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  api:
+    build: .
+    container_name: agenda_restful_api
+    depends_on:
+      - db
+    volumes:
+      - ./app:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+  tester:
+    build: .
+    container_name: agenda_test_runner
+    depends_on:
+      - api
+    volumes:
+      - ./tests:/app
+    env_file:
+      - ./.env
+    entrypoint: ["python", "test_script.py"]
+
+volumes:
+  postgres_data:
