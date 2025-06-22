@@ -2,9 +2,8 @@
 This project is a simple microservices API for managing contacts using FastAPI, PostgreSQL, and GraphQL (via Strawberry). It includes REST and GraphQL endpoints.
 
 ## Requirements
-Docker
-
-## Docker Compose
+- `Docker`
+- `Docker Compose`
 
 ## Setup and Run
 Clone the repository
@@ -31,11 +30,11 @@ docker compose up --build
 ```
 This will start three containers:
 
-- db: PostgreSQL database
+- `db`: PostgreSQL database
 
-- api: FastAPI application
+- `api`: FastAPI application
 
-- tester: Runs the test script against the API
+- `tester`: Runs the test script against the API
 
 ## Access the API
 
@@ -56,10 +55,10 @@ python test_script.py
 ```
 
 ## Project Structure
-/app: FastAPI backend source code
+`/app:` FastAPI backend source code
 
-/tests: Test scripts using HTTP requests
+`/tests:` Test scripts using HTTP requests
 
-docker-compose.yml: Docker Compose config
+`docker-compose.yml:` Docker Compose config
 
 .env: Environment variables for database connection
