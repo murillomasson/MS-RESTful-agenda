@@ -14,17 +14,17 @@ This project is a simple microservices API for managing contacts using FastAPI, 
 - `Docker Compose`
 
 ## Setup and Run
-Clone the repository
+Clone the repository:
 
 ``` bash
-git clone <your-repo-url>
-cd <your-repo-folder>
+git clone https://github.com/murillomasson/MS-RESTful-agenda.git
+cd MS-RESTful-agenda
 ```
 
 ## Create .env file
 
 Create a .env file in the project root with the following content:
-``` bash
+``` env
 POSTGRES_USER=user
 POSTGRES_PASSWORD=password
 POSTGRES_DB=agenda
